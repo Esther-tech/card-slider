@@ -4,14 +4,27 @@
 const btnPrev = document.getElementById("arrow-prev");
 const btnNext = document.getElementById("arrow-next");
 
-const cardItems = document.querySelectorAll("card-item");
-const dots = document.querySelectorAll("dot");
+const cardItems = document.querySelectorAll(".card-item");
+let activeCard = document.querySelector(".active-card");
+const dots = document.querySelectorAll(".dot");
 
 
 const slideNextCard = () => {
+    /*Identify active card*/
+
+    let activeIndex = 1;
+
+    console.log(activeIndex);
+
+    activeCard.classList.remove("active-card");
+
+    
+
+};
+
+const slidePrevCard = () => {
 
 }
-
 
 
 btnNext.addEventListener("click", () => {
@@ -25,7 +38,12 @@ btnPrev.addEventListener("click", () => {
 
 
 
+
+
+
 /*
+document.body.classList.remove("darkmode");
+
 
 darkModeButton.addEventListener("click", () => {
     darkMode = localStorage.getItem("darkMode");
