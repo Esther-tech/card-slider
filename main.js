@@ -6,25 +6,48 @@ const btnNext = document.getElementById("arrow-next");
 
 const cardItems = document.querySelectorAll(".card-item");
 let activeCard = document.querySelector(".active-card");
+let selector = 0;
+
 const dots = document.querySelectorAll(".dot");
 
 
 const slideNextCard = () => {
-    /*Identify active card*/
+    
+    if (selector >= cardItems.length - 1) {
 
-    let activeIndex = 1;
+        //remove arrow or make unclickable
 
-    console.log(activeIndex);
+        return;
+
+    } else {
 
     activeCard.classList.remove("active-card");
-
+    selector++;
+    cardItems[selector].classList.add("active-card");
     
-
+    }
+        
 };
 
 const slidePrevCard = () => {
 
-}
+    if (selector <= 0) {
+
+        //remove arrow or make unclickable
+
+        return;
+
+    } else {
+
+    activeCard.classList.remove("active-card");
+
+    selector--;
+
+    cardItems[selector].classList.add("active-card");
+
+    }
+
+};
 
 
 btnNext.addEventListener("click", () => {
