@@ -61,7 +61,6 @@ const slidePrevCard = () => {
     dots[selector].classList.add("active-dot");
 
     }
-
 };
 
 
