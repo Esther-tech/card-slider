@@ -92,6 +92,12 @@ body {
     color: #f1f1f1;
 }
 
+.unclick:hover i,
+.unclick:hover {
+    color: black;
+    cursor: initial;
+}
+
 #arrow-next {
     justify-content: flex-start;
 }
@@ -99,6 +105,8 @@ body {
 #arrow-prev {
     justify-content: flex-end;
 }
+
+
 
 .pagination {
     display: flex;
