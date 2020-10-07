@@ -11,19 +11,7 @@ let selector = 0;
 
 /*Functions*/
 
-const arrowUnclick = (button) => {
-    if (button.classList.contains("unclick")) {
-        return;
-    } else {
-        button.classList.add("unclick");
-    } 
-};
 
-const arrowClick = (button) => {
-    if (button.classList.contains("unclick")) {
-        button.classList.remove("unclick");
-    }
-};
 
 const slideNextCard = () => {
 
@@ -43,20 +31,10 @@ const slideNextCard = () => {
     //Add next selection
     cardItems[selector].classList.add("active-card");
     dots[selector].classList.add("active-dot");
-    
-    }
-
-    //at the end of the array of cards, deactivate the right arrow
-    console.log()
-    if (selector >= cardItems.length - 1) {
-        arrowUnclick(btnNext);
-    } else {
-        arrowClick(btnNext);
     }
 };
 
 const slidePrevCard = () => {
-
 
     //See if start of cards array is reached
     if (selector === 0) {
@@ -75,13 +53,39 @@ const slidePrevCard = () => {
     cardItems[selector].classList.add("active-card");
     dots[selector].classList.add("active-dot");
     }
+};
 
-    //at the start of the array of cards, deactivate the left arrow
-    if (selector === 0) {
-        arrowUnclick(btnPrev);
+//Deactivating arrows at start and end
+const arrowUnclick = (button) => {
+    if (button.classList.contains("unclick")) {
+        return;
     } else {
-        arrowClick(btnPrev);
+        button.classList.add("unclick");
     } 
+};
+
+const arrowClick = (button) => {
+    if (button.classList.contains("unclick")) {
+        button.classList.remove("unclick");
+    }
+};
+
+const deactivateArrow = () => {
+    //copy the logic from previous things here, eventlistener from window?? always check what has
+       // //at the start of the array of cards, deactivate the left arrow
+    // if (selector === 0) {
+    //     arrowUnclick(btnPrev);
+    // } else {
+    //     arrowClick(btnPrev);
+    // } 
+
+    // //at the end of the array of cards, deactivate the right arrow
+    // console.log()
+    // if (selector >= cardItems.length - 1) {
+    //     arrowUnclick(btnNext);
+    // } else {
+    //     arrowClick(btnNext);
+    // }
 };
 
 
