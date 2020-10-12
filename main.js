@@ -70,22 +70,20 @@ const arrowClick = (button) => {
     }
 };
 
-const deactivateArrow = () => {
-    //copy the logic from previous things here, eventlistener from window?? always check what has
-       // //at the start of the array of cards, deactivate the left arrow
-    // if (selector === 0) {
-    //     arrowUnclick(btnPrev);
-    // } else {
-    //     arrowClick(btnPrev);
-    // } 
+const arrowStatus = () => {
+       //at the start of the array of cards, deactivate the left arrow
+    if (selector === 0) {
+        arrowUnclick(btnPrev);
+    } else {
+        arrowClick(btnPrev);
+    } 
 
-    // //at the end of the array of cards, deactivate the right arrow
-    // console.log()
-    // if (selector >= cardItems.length - 1) {
-    //     arrowUnclick(btnNext);
-    // } else {
-    //     arrowClick(btnNext);
-    // }
+    //at the end of the array of cards, deactivate the right arrow
+    if (selector >= cardItems.length - 1) {
+        arrowUnclick(btnNext);
+    } else {
+        arrowClick(btnNext);
+    }
 };
 
 
@@ -93,11 +91,13 @@ const deactivateArrow = () => {
 
 btnNext.addEventListener("click", () => {
     slideNextCard();
+    arrowStatus();
 });
 
 
 btnPrev.addEventListener("click", () => {
     slidePrevCard();
+    arrowStatus();
 });
 
 
